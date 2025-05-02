@@ -18,7 +18,16 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+
+@Setter
+@Getter
+@EqualsAndHashCode(exclude = {"cities"})
+@ToString(exclude = {"cities"})
 @Entity
 @Table(name = "regions")
 public class Region {
