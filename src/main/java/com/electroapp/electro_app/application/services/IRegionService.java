@@ -12,7 +12,7 @@ public interface IRegionService {
 
     Region save(Region region);
 
-    Region update(Region region, Long id);
+    Optional<Region> update(Long id, Region region);
     
-    void delete(Long id);
+    Optional<Region> delete(Long id);
 }
