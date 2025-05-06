@@ -16,6 +16,7 @@ public class Audit {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+
     @PrePersist
     public void prePersistAudit() {
         createdAt = LocalDateTime.now();
