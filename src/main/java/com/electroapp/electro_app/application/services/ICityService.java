@@ -12,7 +12,7 @@ public interface ICityService {
 
     City save(City city);
 
-    City update(City city, Long id);
+    Optional<City> update(Long id, City city);
 
-    void delete(Long id);
+    Optional<City> delete(Long id);
 }
