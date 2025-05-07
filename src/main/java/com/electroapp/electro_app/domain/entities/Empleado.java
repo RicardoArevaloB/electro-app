@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,10 +28,28 @@ public class Empleado {
     @Column(length = 50, nullable = false)
     private int salarioBase;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "tercero_id")
     @JsonBackReference
     Terceros terceros;
+
+    @ManyToOne
+    @JoinColumn(name = "eps_id")
+    @JsonBackReference
+    Eps eps;
+
+    @ManyToOne
+    @JoinColumn(name = "arl_id")
+    @JsonBackReference
+    Arl arl;
+
+    @OneToOne
+    @JoinColumn(name = "tipo_documento_id")
+    @JsonBackReference
+    TypeDocument tipoDocumento;
+
+
+
 
     
 
